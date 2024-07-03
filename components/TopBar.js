@@ -5,6 +5,7 @@ import { StyleSheet } from 'react-native'
 
 export default function TopBar() {
   return (
+    <>
     <View style = {Styles.container}>
       <Image source={require('../assets/Menu.png')} />
       <Image source={require('../assets/Logo.png')}/>
@@ -13,6 +14,15 @@ export default function TopBar() {
         <Image source={require('../assets/shoppingBag.png')}/>
       </View>
     </View>
+    <View style = {Styles.container}>
+        <Text style = {Styles.storysize}>OUR STORY</Text>
+       <View style = {Styles.smallcontainer}> 
+            <Image source={require('../assets/Listview.png')} />
+            <Image source={require('../assets/Filter.png')} />
+        </View>
+    </View>
+    </>
+
   )
 }
 const Styles = StyleSheet.create({
@@ -23,6 +33,10 @@ const Styles = StyleSheet.create({
     smallcontainer: {
         flexDirection :'row',
         gap : 10,
+    },
+    storysize: {
+        fontSize : 17
     }
+
 
 })

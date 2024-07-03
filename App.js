@@ -6,7 +6,7 @@ import HomeScreen from './screens/HomeScreen'
 export default function () {
   return (
     <View>
-      <Text style = {Styles.text}>then, are you mad?</Text>
+      <Text style = {Styles.text}></Text>
       <HomeScreen/>
     </View>
 
