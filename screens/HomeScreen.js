@@ -1,8 +1,10 @@
-import { View, Text, FlatList, Button } from 'react-native'
+import { View, Text, FlatList } from 'react-native'
 import React, { useState } from 'react'
 import TopBar from '../components/TopBar'
 import {products} from '../components/Data'
 import Card from '../components/Card'
+import { Button } from 'react-native';
+
 
 export default function HomeScreen() {
   const [numColumns, setNumColumns] = useState(2);
@@ -12,15 +14,27 @@ export default function HomeScreen() {
   }
 
   return (
-    <View>
-      <TopBar/>
-      <FlatList
-        data={products}
-        keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <Card {...item} />}
-        numColumns={numColumns}
-        key={numColumns}
-      />
-    </View>
+    <FlatList
+      data={products}
+      keyExtractor={(item) => item.id.toString()}
+      renderItem={({ item }) => <Card {...item} />}
+      numColumns={numColumns}
+      key={numColumns}
+      ListHeaderComponent={
+        <View>
+          <TopBar/>
+          
+        </View>
+      }
+    />
   )
+}
+
+export function HomeScreen1({ navigation }) {
+  return (
+    <Button
+      title="Go to Details"
+      onPress={() => navigation.navigate('Details')}
+    />
+  );
 }
